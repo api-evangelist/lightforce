@@ -1,9 +1,29 @@
 aid: lightforce
 name: Lightforce
-description: 'Lightforce is a company surfaced as a portfolio company of matrix-partners and added to
-  the API Evangelist network as a stub for enrichment. Sector: healthtech. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'LightForce Orthodontics, Inc. is a Boston-area medical device and digital
+  manufacturing company that produces "generative braces" — fully customized, 3D-printed
+  orthodontic brackets and indirect bonding trays generated from each patient''s own
+  tooth anatomy and the treating orthodontist''s digital treatment plan. Doctors submit
+  intraoral scans and treatment plans through the LightForce Doctor Portal, LightForce
+  designs and 3D-prints patient-specific LightBracket ceramic and metal appliances,
+  and ships custom IDB trays back to the practice. The company operates as a HIPAA-covered
+  digital workflow: no public developer API or developer portal is published, but the
+  Doctor Portal is fronted by a public OpenID Connect identity surface at
+  id.lightforceortho.com. Backed by Matrix Partners, Kleiner Perkins, and others.'
 url: https://raw.githubusercontent.com/api-evangelist/lightforce/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.prod.website-files.com/69aec45d4fb611242f119860/69e28a19a4f73f9aaab7e1f9_fav-lightforce%20256.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,11 +32,40 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Healthtech
-apis: []
+- Orthodontics
+- Dentistry
+- Medical Devices
+- 3D Printing
+- Digital Manufacturing
+- Identity
+apis:
+- aid: lightforce:identity
+  name: LightForce Identity (OpenID Connect)
+  description: 'The public OpenID Connect / OAuth 2.0 identity surface that fronts the
+    LightForce Doctor Portal. Published as a live OIDC discovery document at
+    id.lightforceortho.com/.well-known/openid-configuration, it exposes standard
+    authorization, token, device-authorization, userinfo, revocation, dynamic client
+    registration, and JWKS endpoints. Client registration is not open to the public —
+    this is the authentication surface for LightForce practice users, captured here
+    because it is genuinely public and machine-discoverable.'
+  humanURL: https://id.lightforceortho.com/.well-known/openid-configuration
+  baseURL: https://id.lightforceortho.com
+  tags:
+  - Identity
+  - OpenID Connect
+  - OAuth 2.0
+  - Authentication
+  properties:
+  - type: OpenIDConnect
+    url: https://id.lightforceortho.com/.well-known/openid-configuration
+  - type: Authentication
+    url: authentication/lightforce-authentication.yml
+  - type: OAuthScopes
+    url: scopes/lightforce-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +74,40 @@ maintainers:
 common:
 - type: Website
   url: https://lf.co
+- type: Support
+  url: https://kb.lightforceortho.com/en/
+- type: Blog
+  url: https://lf.co/blog
+- type: GitHubOrganization
+  url: https://github.com/lightforceortho
+- type: SignUp
+  url: https://lf.co/doctors/get-started
+- type: Login
+  url: https://id.lightforceortho.com
+- type: TermsOfService
+  url: https://lf.co/legal/terms
+- type: PrivacyPolicy
+  url: https://lf.co/legal/privacy
+- type: Compliance
+  url: https://lf.co/legal/hipaa
+- type: WellKnown
+  url: well-known/lightforce-well-known.yml
+- type: Authentication
+  url: authentication/lightforce-authentication.yml
+- type: OAuthScopes
+  url: scopes/lightforce-scopes.yml
+- type: Conformance
+  url: conformance/lightforce-conformance.yml
+- type: DomainSecurity
+  url: security/lightforce-domain-security.yml
+- type: Conventions
+  url: conventions/lightforce-conventions.yml
+- type: LLMsTxt
+  url: llms/lightforce-llms.txt
+- type: Packages
+  url: packages/lightforce-packages.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
