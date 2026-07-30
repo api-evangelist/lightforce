@@ -1,0 +1,43 @@
+generated: '2026-07-19'
+method: searched
+source: https://id.lightforceortho.com/.well-known/openid-configuration
+notes: >-
+  LightForce publishes no /.well-known/ surface on its marketing/corporate host (lf.co)
+  — every probe there returned 404. The identity host that fronts the LightForce Doctor
+  Portal (id.lightforceortho.com, an Auth0-hosted tenant) does publish a full OpenID
+  Connect discovery surface. All documents below were fetched live and saved verbatim.
+hosts:
+- host: https://lf.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/jwks.json
+    status: 404
+- host: https://id.lightforceortho.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: application/json
+    file: lightforce-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json
+    file: lightforce-oauth-authorization-server.json
+  - path: /.well-known/jwks.json
+    status: 200
+    content_type: application/json
+    file: lightforce-jwks.json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404

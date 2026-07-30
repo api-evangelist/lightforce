@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: https://id.lightforceortho.com/.well-known/openid-configuration
+notes: >-
+  LightForce publishes no public API, no API reference, and no developer documentation,
+  so the only cross-cutting semantics that can be recorded truthfully are those the
+  identity surface advertises in OIDC discovery. Everything not evidenced there is left
+  explicitly unknown rather than assumed.
+authentication:
+  style: oauth2-bearer
+  model: OpenID Connect (Auth0-hosted tenant)
+  issuer: https://id.lightforceortho.com/
+  pkce: required-capable
+  pkce_methods: [S256, plain]
+  mfa: supported
+  proof_of_possession: DPoP (ES256)
+  token_revocation: https://id.lightforceortho.com/oauth/revoke
+  see: authentication/lightforce-authentication.yml
+idempotency:
+  supported: unknown
+  notes: No idempotency key header or retry contract is documented publicly.
+pagination:
+  style: unknown
+  notes: No public resource API is documented.
+versioning:
+  scheme: unknown
+  notes: No published API versioning policy.
+error_envelope:
+  format: unknown
+  notes: >-
+    The identity surface returns standard OAuth 2.0 / OIDC error responses
+    (error / error_description) per RFC 6749; no LightForce-specific error catalog
+    is published.
+rate_limiting:
+  signaling: unknown
+  notes: No published rate-limit headers or quota documentation.
+cross_links:
+  authentication: authentication/lightforce-authentication.yml
+  scopes: scopes/lightforce-scopes.yml
+  conformance: conformance/lightforce-conformance.yml
+  well_known: well-known/lightforce-well-known.yml
+  domain_security: security/lightforce-domain-security.yml

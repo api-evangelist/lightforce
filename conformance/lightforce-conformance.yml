@@ -1,0 +1,59 @@
+generated: '2026-07-19'
+method: searched
+source: https://id.lightforceortho.com/.well-known/openid-configuration
+notes: >-
+  Standards conformance asserted only where there is direct evidence in a document
+  LightForce actually publishes. No public OpenAPI exists for this provider, so every
+  spec-derived standard below is recorded as unknown rather than guessed.
+standards:
+- id: oidc-discovery
+  conforms: true
+  evidence: Live /.well-known/openid-configuration served at https://id.lightforceortho.com/
+- id: oidc-core
+  conforms: true
+  evidence: issuer, authorization_endpoint, token_endpoint, userinfo_endpoint, jwks_uri all present
+- id: oauth2
+  conforms: true
+  evidence: authorization_code, client_credentials, refresh_token, implicit and password grants advertised
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200 with authorization server metadata
+- id: rfc7636-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256
+- id: rfc8628-device-authorization-grant
+  conforms: true
+  evidence: device_authorization_endpoint and urn:ietf:params:oauth:grant-type:device_code advertised
+- id: rfc8693-token-exchange
+  conforms: true
+  evidence: urn:ietf:params:oauth:grant-type:token-exchange in grant_types_supported
+- id: rfc7009-token-revocation
+  conforms: true
+  evidence: revocation_endpoint https://id.lightforceortho.com/oauth/revoke
+- id: rfc7591-dynamic-client-registration
+  conforms: true
+  evidence: registration_endpoint https://id.lightforceortho.com/oidc/register
+- id: rfc9449-dpop
+  conforms: true
+  evidence: dpop_signing_alg_values_supported [ES256]
+- id: oidc-backchannel-logout
+  conforms: true
+  evidence: backchannel_logout_supported true
+- id: ciba
+  conforms: true
+  evidence: backchannel_authentication_endpoint with poll delivery mode
+- id: hipaa
+  conforms: true
+  evidence: Published Notice of Privacy Practices for PHI, effective 2026-01-16 — https://lf.co/legal/hipaa
+- id: fapi-2.0
+  conforms: false
+  evidence: implicit grant and plain PKCE still advertised; no PAR endpoint published
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on both lf.co and id.lightforceortho.com
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: no public OpenAPI or error reference published
+- id: openapi
+  conforms: unknown
+  evidence: no public OpenAPI/Swagger definition found on lf.co, the support center, or the GitHub org

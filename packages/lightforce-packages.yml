@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: registry searches + https://github.com/lightforceortho
+notes: >-
+  No first-party LightForce client library exists on any public package registry.
+  LightForce ships no public API and therefore no SDK. Recorded as a verified empty
+  result, not an omission — re-run when a developer program appears.
+packages: []
+registries_probed:
+- registry: npm
+  query: lightforce, lightforceortho, "@lightforce/*"
+  result: no first-party packages
+- registry: pypi
+  query: lightforce, lightforce-ortho, lightforceortho
+  result: 404 on all
+- registry: rubygems
+  query: lightforce
+  result: 404
+- registry: crates.io
+  query: lightforce
+  result: 0 crates
+github_org:
+  url: https://github.com/lightforceortho
+  public_repos: 12
+  first_party_libraries: 0
+  notes: >-
+    Every public repository in the LightForce Orthodontics GitHub organization is a fork
+    of a third-party open-source project (ajv, sequelize, swagger-autogen, zod-to-openapi,
+    json-schema-to-typescript, postmark-cli, imagemagick-aws-lambda-2, s3-gha-cache, verb,
+    gco_python, seedformer, PoissonReconstruction). These forks evidence internal
+    Node/TypeScript API tooling and 3D point-cloud/mesh reconstruction work, but LightForce
+    publishes no client library or API specification of its own.

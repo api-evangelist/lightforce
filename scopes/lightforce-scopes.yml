@@ -1,0 +1,61 @@
+generated: '2026-07-19'
+method: searched
+source: https://id.lightforceortho.com/.well-known/openid-configuration
+docs: https://id.lightforceortho.com/.well-known/openid-configuration
+notes: >-
+  Scopes are taken verbatim from `scopes_supported` in the live OIDC discovery document.
+  These are the standard OpenID Connect / Auth0 identity scopes — LightForce publishes
+  no product/API-resource scope reference, because there is no public LightForce API
+  behind this authorization server that outside developers can call. Treat this as the
+  identity scope surface only.
+schemes:
+- name: OpenIDConnect
+  source: well-known/lightforce-openid-configuration.json
+  issuer: https://id.lightforceortho.com/
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://id.lightforceortho.com/authorize
+    tokenUrl: https://id.lightforceortho.com/oauth/token
+scopes:
+- scope: openid
+  description: Request an ID token; required for OpenID Connect authentication.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: profile
+  description: Basic profile claims for the authenticated user.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: offline_access
+  description: Issue a refresh token for long-lived access.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: name
+  description: The user's full name claim.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: given_name
+  description: The user's given (first) name claim.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: family_name
+  description: The user's family (last) name claim.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: nickname
+  description: The user's nickname claim.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: email
+  description: The user's email address claim.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: email_verified
+  description: Whether the user's email address has been verified.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: picture
+  description: The user's profile picture URL claim.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: created_at
+  description: The timestamp the user record was created.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: identities
+  description: Linked identity-provider identities for the user.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: phone
+  description: The user's phone number claim.
+  sources: [well-known/lightforce-openid-configuration.json]
+- scope: address
+  description: The user's address claim.
+  sources: [well-known/lightforce-openid-configuration.json]

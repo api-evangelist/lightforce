@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: lf.co
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 23 15:50:13 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: id.lightforceortho.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 21 02:07:39 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: lf.co
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+- domain: lightforceortho.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
