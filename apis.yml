@@ -35,6 +35,15 @@ created: '2026-07-17'
 modified: '2026-07-19'
 tags:
 - Company
+- Health Tech
+- Orthodontics
+- Dentistry
+- Medical Devices
+- 3D Printing
+- Digital Manufacturing
+- Identity
+tags_raw:
+- Company
 - Healthtech
 - Orthodontics
 - Dentistry
@@ -55,6 +64,10 @@ apis:
   humanURL: https://id.lightforceortho.com/.well-known/openid-configuration
   baseURL: https://id.lightforceortho.com
   tags:
+  - Identity
+  - OpenID Connect
+  - Authentication
+  tags_raw:
   - Identity
   - OpenID Connect
   - OAuth 2.0
