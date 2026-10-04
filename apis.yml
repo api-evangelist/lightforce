@@ -53,6 +53,9 @@ tags:
 - 3D Printing
 - Digital Manufacturing
 - Identity
+- Healthcare
+- Dental
+- Manufacturing
 tags_raw:
 - Company
 - Healthtech
@@ -62,6 +65,9 @@ tags_raw:
 - 3D Printing
 - Digital Manufacturing
 - Identity
+- Healthcare
+- Dental
+- Manufacturing
 apis:
 - aid: lightforce:identity
   name: LightForce Identity (OpenID Connect)
